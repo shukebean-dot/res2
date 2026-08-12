@@ -40,3 +40,5 @@ yarn-error.log*
 /work/
 dev.log
 dev.err.log
+preview.log
+preview.err.log

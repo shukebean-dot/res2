@@ -1,10 +1,13 @@
 const mapsUrl = "https://www.google.com/maps/place/%E9%A6%99%E6%BA%90%E5%B0%8F%E9%A3%9F%E9%A6%86+Restoran+Xian+Yuan/@2.3632761,102.0626403,26510m/data=!3m1!1e3!4m10!1m2!2m1!1z576O6aOf!3m6!1s0x31d1fcfc28cc26cd:0x4aea671cf1461750!8m2!3d2.3632761!4d102.2150756";
 
 const dishes = [
-  { no: "01", zh: "叁巴臭豆鲜虾", en: "Sambal Petai Prawns", note: "大颗鲜虾 · 香辣叁巴 · 爽脆臭豆" },
-  { no: "02", zh: "招牌卤猪脚", en: "Braised Pork Knuckle", note: "软嫩入味 · 浓郁卤香 · 下饭首选" },
-  { no: "03", zh: "湿炒粿条", en: "Kuey Teow Basah", note: "镬气十足 · 滑嫩酱香 · 现点现炒" },
-  { no: "04", zh: "酸甜芋篮", en: "Sweet & Sour Yam Basket", note: "外酥内绵 · 酸甜开胃 · 合家分享" },
+  { no: "01", zh: "清蒸苏眉", en: "Steamed Sumei Fish", image: "/dish-steamed-sumei.jpg", note: "清蒸鲜鱼 · 蒜香葱油 · 原汁原味" },
+  { no: "02", zh: "豆酱炸左口鱼", en: "Fried Flounder with Soybean Sauce", image: "/dish-soy-flatfish.jpg", note: "香酥鲜鱼 · 浓郁豆酱 · 惹味下饭" },
+  { no: "03", zh: "香辣海红鱼", en: "Spicy Red Snapper", image: "/dish-spicy-snapper.jpg", note: "鲜嫩鱼肉 · 香辣酱汁 · 聚餐推荐" },
+  { no: "04", zh: "咖喱海红鱼", en: "Curry Red Snapper", image: "/dish-curry-snapper.jpg", note: "浓香咖喱 · 鲜鱼入味 · 佐饭首选" },
+  { no: "05", zh: "双味排骨", en: "Dual-Flavour Pork Ribs", image: "/dish-dual-ribs.jpg", note: "一盘双味 · 酸甜与咖喱 · 丰富满足" },
+  { no: "06", zh: "红烧猪手", en: "Braised Pork Knuckle", image: "/dish-pork-knuckle.jpg", note: "软嫩入味 · 浓郁卤香 · 招牌家常味" },
+  { no: "07", zh: "花菇焖鸡", en: "Braised Chicken with Mushrooms", image: "/dish-mushroom-chicken.jpg", note: "整鸡焖香 · 花菇鲜甜 · 合家分享" },
 ];
 
 export default function Home() {
@@ -52,8 +55,7 @@ export default function Home() {
         <div className="dish-grid">
           {dishes.map((dish) => (
             <article className="dish-card" key={dish.no}>
-              <div className="dish-number">{dish.no}</div>
-              <div className="dish-plate"><span>{dish.zh.charAt(0)}</span></div>
+              <div className="dish-photo"><img src={dish.image} alt={dish.zh} /><span>{dish.no}</span></div>
               <div className="dish-copy"><h3>{dish.zh}</h3><p>{dish.en}</p><small>{dish.note}</small></div>
             </article>
           ))}
